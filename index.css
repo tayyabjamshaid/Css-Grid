@@ -1,0 +1,338 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    height: 600px;
+    width: 100%;
+    background-color: blueviolet;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 33px 1fr  30px;
+    column-gap: 10px;
+    row-gap: 10px;
+    place-items: end;
+}
+
+.item {
+   
+        background-color: green;
+        width: 100px;
+        height: 70px;
+}
+.head{
+   
+    grid-column-start: 1;
+    grid-column-end: 4;
+    width: 100vw;
+   
+}
+/* .two{
+    align-self: center;
+} */
+
+
+
+.footer {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    width: 100vw;
+}
+/* Grid Properties
+Parent Div Properties
+=>Make a display:grid property in parent div
+
+1-grid-template-rows and grid-template-columns
+=>Use property  grid-template-rows and  grid-template-columns to give rows and columns
+=>Hum is property me number of rows and columns btaty ha k hamai itni rows and columns chahiye
+.container {
+    height: 700px;
+    width: 700px;
+    background-color: blueviolet;
+    display: grid;
+    grid-template-columns:133px 133px 133px ;
+    grid-template-rows: 133px 133px 133px;
+   
+
+}
+Imp:
+=>Is properties me di gai values individual item ki given width sy zyada huni chahiye
+As experienced,grid-template-columns me jitni b number of values dy gy utny he column bnata jai ga(Is mamly me number of rows chor k number of columns
+=>ko zyada priority dyta ha)
+
+            REPEAT METHOD 
+a) We can also use repeat method in grid-template-rows and grid-template-columns
+Is method k mutabiq ye container k height aur width ko khud he measure kr k hamari rows and columns ko usi me manage kr ly ga 
+
+.container {
+    height: 700px;
+    width: 700px;
+    background-color: blueviolet;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    }
+ .item {
+    height: 70px;
+    width: 100px;
+   background-color: green;
+        }
+b) Repeat method me agr hum item ki height aur width na b dy tab b ye chly ga
+.container {
+    height: 700px;
+    width: 700px;
+    background-color: blueviolet;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.item {
+    background-color: green;
+}
+ 
+2-row-gap & column-gap
+This properties are use to give gap btw columns and rows
+
+3-grid-column-start & grid-column-end
+=>Agr hum columns ko join krna chahty tu use this properties
+=>Is me  phly us specific item ko id/class dy k pkry gy jaha sy start krna chahty ha
+=>End wali value waly column ko ye consider ni kry ga,blky waha tak rhy ha
+For example,3 tak jao(is me 3 include ni ha,3 sy phly phly include ha)
+=> Jab hum sari items ko properties dty ha,waha height aur width pass ni krni wrna ye dono properties ni chly gi(grid-column-start & grid-column-end see down)
+.container {
+    height: 700px;
+    width: 100%;
+    background-color: blueviolet;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+}
+.item {
+    // height: 70px;      
+        width: 100px;  //           ///////////do not give height and width here
+    background-color: green;
+}
+
+.iy {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+MOST IMPORTANT with example
+=>Agr hum kisi b row ki height or width change krna chahty ha,tu us grid-emplate-row k andr us ki bari k mutabiq change kry gy
+.container {
+    height: 100%;
+    width: 100%;
+    background-color: blueviolet;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 33px 280px 50px 280px 30px;  //here u can change height 
+    column-gap: 10px;
+    row-gap: 10px;
+
+}
+
+.item {
+    
+    background-color: green;
+}
+
+.head {
+
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+}
+
+.bar {
+
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+}
+
+
+
+.footer {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+ <div class="container">
+ <div class="item head">1st </div>
+ <div class="item " id="item-2">2nd</div>
+ <div class="item " id="item-3">3rd</div>
+ <div class="item " id="item-4">4th</div>
+ <div class="item bar" id="item-5">5th</div>
+ <div class="item " id="item-6">6th</div>
+ <div class="item " id="item-7">7th</div>
+ <div class="item " id="item-8">8th</div>
+ <div class="item footer" id="item-9">9th</div></div>
+--------------------
+Similarly,agr mera data zyada hai aur mai chahta hu dATA JESY HE barta jaiy,us column ki height b automatically bharti jai,for this,use 1fr instead of khud height dny sy
+<div class="container"><div class="item head">1st </div>
+<div class="item " id="item-2">lorem1445</div>  //use lorem here
+<div class="item " id="item-3">3rd</div>
+<div class="item " id="item-4">4th</div>
+<div class="item bar" id="item-5">5th</div>
+<div class="item " id="item-6">6th</div>
+<div class="item " id="item-7">7th</div>
+<div class="item " id="item-8">8th</div>
+<div class="item footer" id="item-9">9th</div>
+</div>
+.container {
+    height: 100%;
+    width: 100%;
+    background-color: blueviolet;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 33px 1fr 50px 280px 30px;   //only change here
+    column-gap: 10px;
+    row-gap: 10px;
+
+}
+-------------------------------------------------------------------------------------------------------------------------
+Justify items(works horizontally)
+It is used to make alignment on grid items in grid container
+Ye behtr ha k yaha pr items ko width b dy di jai taky is property ki implementation wazia nazar aiy
+.container {
+    height: 600px;
+    width: 100%;
+    background-color: blueviolet;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 33px 1fr 30px;
+    column-gap: 10px;
+    row-gap: 10px;
+    justify-items: start;   //property use here
+
+}
+
+.item {
+ 
+    background-color: green;
+    width: 100px;               //give width here is better,not compulsory   //height shouid not given here //height will be auto generated
+}
+
+.head {
+
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+}
+.footer {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+<div class="container">
+<div class="item head">1st </div>
+<div class="item two " id="item-2">2nd</div>
+<div class="item " id="item-3">3rd</div>
+<div class="item " id="item-4">4th</div>
+<div class="item footer" id="item-5">5th</div>
+</div>
+------
+justify-self
+In grid container,Agr sari items ki bjaiy srf 1 item ko he align krna ha,then use this
+ <div class="container"><div class="item head">1st </div>
+ <div class="item two " id="item-2">2nd</div>             //give class named "two" here  //height shouid not given here //height will be auto generated
+ <div class="item " id="item-3">3rd</div>
+ <div class="item " id="item-4">4th</div>
+ <div class="item footer" id="item-5">5th</div>
+ </div>
+.container {
+    height: 600px;
+    width: 100%;
+    background-color: blueviolet;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 33px 1fr 30px;
+    column-gap: 10px;
+    row-gap: 10px;
+
+}
+.item {
+    
+    background-color: green;
+    width: 100px;                                      //given width is better
+}
+.head {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.two {
+    justify-self: start;                          //use here
+}
+.footer {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+----------------------------------------------
+Agr hum chahty ha hamari item screen ki pori width ly then use this property
+.footer {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    width: 100vw;
+}
+---------------------------------------------
+Align items(works verytically) 
+ It is used to make vertical alignment on grid items in grid container
+ Ye behtr ha k yaha pr items ko height,width b dy di jai taky is property ki implementation wazia nazar aiy
+ .container {
+     height: 600px;
+     width: 100%;
+     background-color: blueviolet;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     grid-template-rows: 33px 1fr 30px;
+     column-gap: 10px;
+     row-gap: 10px;
+     align-items: center;
+ }
+
+ .item {
+
+     background-color: green;
+     width: 100px;
+     height: 70px;
+ }
+
+ .head {
+
+     grid-column-start: 1;
+     grid-column-end: 4;
+     width: 100vw;
+
+ }
+
+
+
+
+
+ .footer {
+     grid-column-start: 1;
+     grid-column-end: 4;
+     width: 100vw;
+ }
+ ------
+ align-self is same as justify-self,just differ is that  align is for vertical a,justify is for horizonatal,2nd differ is that we can give both
+ height/width in align self
+ -------------
+ place-items
+ It is collection/combination of both properties(justify-items && align-items)
+
+.container {
+    height: 600px;
+    width: 100%;
+    background-color: blueviolet;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 33px 1fr 30px;
+    column-gap: 10px;
+    row-gap: 10px;
+    place-items: end;        //ye horizontally and vertically dono sy items ko center me kr dy ga
+}
+*/
